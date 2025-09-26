@@ -10,6 +10,9 @@ function App() {
   let dummy = "hello";
   useEffect(() => {
     dummy = "bye";
+
+    let data = eval("1+2");
+    console.log(`data: ${data}`);
   }, []);
 
   return (
@@ -21,6 +24,10 @@ function App() {
             let input_value = event?.target?.value ?? "";
             dummy = input_value;
             setinputVal(input_value);
+          }}
+          onKeyDown={(event) => {
+            let keycode = event?.key;
+            console.log(`keycode: ${keycode}`);
           }}
         />
         <div>{dummy}</div>
