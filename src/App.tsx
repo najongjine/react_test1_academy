@@ -13,6 +13,20 @@ function App() {
     dummy = "bye";
   }, []);
 
+  function onInputEnter(event: React.KeyboardEvent) {
+    let key = event?.key;
+    if (key == "Enter") {
+      const hasOtherCharacters = /[^0-9+\-*/%]/.test(inputVal);
+
+      if (hasOtherCharacters) {
+        alert("수학 수식만 입력해 주세요");
+        return;
+      }
+      let data = eval(inputVal);
+      setevalResult(data);
+    }
+  }
+
   return (
     <div>
       <div>
@@ -24,19 +38,7 @@ function App() {
 
             setinputVal(input_value);
           }}
-          onKeyDown={(event) => {
-            let key = event?.key;
-            if (key == "Enter") {
-              const hasOtherCharacters = /[^0-9+\-*/%]/.test(inputVal);
-
-              if (hasOtherCharacters) {
-                alert("수학 수식만 입력해 주세요");
-                return;
-              }
-              let data = eval(inputVal);
-              setevalResult(data);
-            }
-          }}
+          onKeyDown={onInputEnter}
         />
         <div> = {evalResult}</div>
         <div>내가 타이핑 한거: {inputVal}</div>
