@@ -22,7 +22,9 @@ function App() {
             let input_value = event?.target?.value ?? "";
             // 숫자와 +, -, *, /, % 만 허용하는 정규식
             const filtered_value = input_value.replace(/[^0-9+\-*/%]/g, "");
-            setinputVal(input_value);
+            if (filtered_value) {
+              setinputVal(input_value);
+            }
           }}
           onKeyDown={(event) => {
             let key = event?.key;
