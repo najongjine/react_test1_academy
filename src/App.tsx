@@ -26,8 +26,10 @@ function App() {
             setinputVal(input_value);
           }}
           onKeyDown={(event) => {
-            let keycode = event?.key;
-            console.log(`keycode: ${keycode}`);
+            let key = event?.key;
+            if (key == "Enter") {
+              alert("앤터 누름");
+            }
           }}
         />
         <div>{dummy}</div>
