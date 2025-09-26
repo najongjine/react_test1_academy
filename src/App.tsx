@@ -24,6 +24,7 @@ function App() {
           }}
         />
         <div>{dummy}</div>
+        <div>내가 타이핑 한거: {inputVal}</div>
       </div>
     </div>
   );
