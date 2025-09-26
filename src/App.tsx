@@ -21,14 +21,18 @@ function App() {
           onChange={(event) => {
             let input_value = event?.target?.value ?? "";
             // 숫자와 +, -, *, /, % 만 허용하는 정규식
-            const filtered_value = input_value.replace(/[^0-9+\-*/%]/g, "");
-            if (filtered_value) {
-              setinputVal(input_value);
-            }
+
+            setinputVal(input_value);
           }}
           onKeyDown={(event) => {
             let key = event?.key;
             if (key == "Enter") {
+              const hasOtherCharacters = /[^0-9+\-*/%]/.test(inputVal);
+
+              if (hasOtherCharacters) {
+                alert("수학 수식만 입력해 주세요");
+                return;
+              }
               let data = eval(inputVal);
               setevalResult(data);
             }
