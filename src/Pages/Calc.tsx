@@ -1,7 +1,4 @@
 import { useEffect, useState } from "react";
-import reactLogo from "./assets/react.svg";
-import viteLogo from "/vite.svg";
-import "./App.css";
 
 export default function Calc() {
   /* inputVal 이라는 바인딩 변수랑 set 함수 만들어 주세요.
