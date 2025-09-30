@@ -4,7 +4,12 @@ import { useEffect, useState } from "react";
 export default function Lotto() {
   const [lottoNum, setlottoNum] = useState<number[]>([]);
 
-  async function onGenterateNumber(event: React.MouseEvent) {}
+  async function onGenterateNumber(event: React.MouseEvent) {
+    /* 번호를 하나씩 list에 넣는다 
+    번호는 랜덤으로 생성해봅시다 */
+    let randomNum = Math.floor(Math.random() * 9999999);
+    console.log(randomNum);
+  }
 
   return (
     <div className="content-margin-padding">
