@@ -5,6 +5,8 @@ export default function Lotto() {
   const [lottoNum, setlottoNum] = useState<number[]>([]);
 
   async function onGenterateNumber(event: React.MouseEvent) {
+    /* 번호가 바이러스처럼 증식되는걸 고쳐 봅시다 */
+    setlottoNum([]);
     for (let i = 0; i < 6; i++) {
       let randomNum = Math.floor(Math.random() * 9999999) % 46;
       if (randomNum <= 0) randomNum = 1;
