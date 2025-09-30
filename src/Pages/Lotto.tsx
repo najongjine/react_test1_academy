@@ -17,6 +17,11 @@ export default function Lotto() {
     <div className="content-margin-padding">
       <div>lotto 화면</div>
       <div>
+        {lottoNum.map((e) => (
+          <span>{e}&nbsp;&nbsp;&nbsp;&nbsp;</span>
+        ))}
+      </div>
+      <div>
         <button onClick={onGenterateNumber}>번호생성</button>
       </div>
     </div>
