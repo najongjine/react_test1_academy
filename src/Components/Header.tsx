@@ -1,5 +1,6 @@
 import { useEffect, useState } from "react";
 import "./Header.css";
+import { Link } from "react-router-dom";
 
 export default function Header() {
   return (
@@ -9,16 +10,10 @@ export default function Header() {
       </header>
       <ul className="topnav">
         <li>
-          <a href="#">Home</a>
+          <Link to="/">홈</Link>
         </li>
         <li>
-          <a href="#">News</a>
-        </li>
-        <li>
-          <a href="#">Contact</a>
-        </li>
-        <li>
-          <a href="#">About</a>
+          <Link to="/calc">계산기</Link>
         </li>
       </ul>
     </div>
