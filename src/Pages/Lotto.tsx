@@ -8,17 +8,18 @@ export default function Lotto() {
     /* lottoNum 을 빈 배열로 초기화 */
     /* filter,  */
     setlottoNum([]);
-    let idx = 0;
-    for (; idx < 6; ) {
+    let tempNums: number[] = [];
+    for (; setlottoNum.length < 6; ) {
       let randomNum = Math.floor(Math.random() * 9999999) % 46;
       if (randomNum <= 0) randomNum = 1;
-      let duplicate = lottoNum.find((e) => e == randomNum);
+      let duplicate = tempNums.find((e) => e == randomNum);
       // continue 뜻은 아래에 있는거 실행하지 마라.
       if (duplicate) continue;
-      idx++;
-      /* state 배열에 데이터 추가하는 react 문법 */
-      setlottoNum((e) => [...e, randomNum]);
+      alert(`dup: ${duplicate}`);
+      tempNums.push(randomNum);
     }
+    /* state 배열에 데이터 추가하는 react 문법 */
+    setlottoNum(tempNums);
   }
 
   return (
