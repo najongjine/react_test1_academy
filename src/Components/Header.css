@@ -1,0 +1,30 @@
+header {
+  background-color: #f1f1f1;
+  padding: 10px;
+  text-align: center;
+}
+
+/* Style the topnav */
+ul.topnav {
+  display: flex;
+  margin: 0;
+  padding: 0;
+  background-color: #333333;
+  /* 자식 요소(li)들이 가운데로 정렬 */
+  justify-content: center;
+}
+
+/* Style links in topnav */
+ul.topnav li a {
+  display: block;
+  color: #f1f1f1;
+  padding: 14px 16px;
+  text-decoration: none;
+  align-content: center;
+}
+
+/* Change color on hover */
+ul.topnav li a:hover {
+  background-color: #dddddd;
+  color: black;
+}
