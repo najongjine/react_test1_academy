@@ -25,7 +25,7 @@ export default function Calc() {
   }
 
   return (
-    <div>
+    <div className="content-margin-padding">
       <div>
         <input
           value={inputVal}

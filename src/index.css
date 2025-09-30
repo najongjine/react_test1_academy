@@ -1,1 +1,6 @@
 @import "tailwindcss";
+
+.content-margin-padding {
+  margin: 0;
+  padding: 1.25rem;
+}
