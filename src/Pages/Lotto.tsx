@@ -5,10 +5,9 @@ export default function Lotto() {
   const [lottoNum, setlottoNum] = useState<number[]>([]);
 
   async function onGenterateNumber(event: React.MouseEvent) {
-    /* 번호를 하나씩 list에 넣는다 
-    번호는 랜덤으로 생성해봅시다 */
-    let randomNum = Math.floor(Math.random() * 9999999);
-    console.log(randomNum);
+    let randomNum = Math.floor(Math.random() * 9999999) % 46;
+    if (randomNum <= 0) randomNum = 1;
+    setlottoNum((prevLottoNum) => [...prevLottoNum, randomNum]);
   }
 
   return (
