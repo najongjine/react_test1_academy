@@ -15,6 +15,9 @@ export default function Header() {
         <li>
           <Link to="/calc">계산기</Link>
         </li>
+        <li>
+          <Link to="/lotto">로또</Link>
+        </li>
       </ul>
     </div>
   );
