@@ -63,7 +63,8 @@ export default function Memo() {
       <div>
         {memoList.map((e) => (
           <div>
-            <span>{e.content}</span> &nbsp;&nbsp;
+            <span className="white-space: pre-line;">{e.content}</span>{" "}
+            &nbsp;&nbsp;
             <span>{e.date}</span>
           </div>
         ))}
