@@ -13,6 +13,9 @@ export default function Memo() {
     event.preventDefault();
     /* 저장 버튼 누르면, memo 칸에 입력했던거 memolist에 추가하기 */
     let newMemo: Memotype = { content: "", date: "" };
+    let now = new Date();
+    //2025. 10. 1. 오전 11:06:38
+    let currentTimeStr = now.toLocaleDateString();
   }
 
   return (
