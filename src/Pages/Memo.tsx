@@ -12,7 +12,9 @@ export default function Memo() {
           cols={100}
           rows={20}
           value={memo}
-          onChange={(event) => {}}
+          onChange={(event) => {
+            setmemo(event?.target?.value ?? "");
+          }}
           onKeyDown={(event) => {}}
         />
       </div>
