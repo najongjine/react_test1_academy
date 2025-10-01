@@ -1,7 +1,12 @@
 import { useEffect, useState } from "react";
 
+interface Memotype {
+  content: string;
+  date: string;
+}
 export default function Memo() {
   const [memo, setmemo] = useState<string>("");
+  const [memoList, setmemoList] = useState<Memotype[]>([]);
   return (
     <div className="content-margin-padding">
       <div>memo 화면</div>
