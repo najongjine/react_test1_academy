@@ -4,6 +4,7 @@ interface Memotype {
   content: string;
   date: string;
 }
+
 export default function Memo() {
   const [memo, setmemo] = useState<string>("");
   const [memoList, setmemoList] = useState<Memotype[]>([]);
@@ -40,6 +41,15 @@ export default function Memo() {
             </button>
           </div>
         </form>
+      </div>
+
+      <div>
+        {memoList.map((e) => (
+          <div>
+            <span>{e.content}</span> &nbsp;&nbsp;
+            <span>{e.date}</span>
+          </div>
+        ))}
       </div>
     </div>
   );
