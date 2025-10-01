@@ -1,4 +1,5 @@
 import { useEffect, useState } from "react";
+import "./Memo.css";
 
 interface Memotype {
   content: string;
@@ -63,8 +64,7 @@ export default function Memo() {
       <div>
         {memoList.map((e) => (
           <div>
-            <span className="white-space: pre-line;">{e.content}</span>{" "}
-            &nbsp;&nbsp;
+            <span className="pre-wrap-text">{e.content}</span> &nbsp;&nbsp;
             <span>{e.date}</span>
           </div>
         ))}
