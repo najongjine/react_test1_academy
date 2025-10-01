@@ -19,7 +19,9 @@ export default function Lotto() {
       tempNums.push(randomNum);
     }
     /* state 배열에 데이터 추가하는 react 문법 */
-    setlottoNum(tempNums);
+    //setlottoNum(tempNums);
+    let numbers = generateLottoNumbers();
+    setlottoNum(numbers);
   }
 
   /**
