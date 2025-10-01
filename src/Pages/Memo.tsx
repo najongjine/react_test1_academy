@@ -23,7 +23,7 @@ export default function Memo() {
             />
           </div>
           <div>
-            <button>저장</button>
+            <button onClick={() => {}}>저장</button>
           </div>
         </form>
       </div>
