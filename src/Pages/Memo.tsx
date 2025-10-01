@@ -16,6 +16,13 @@ export default function Memo() {
     let now = new Date();
     //2025. 10. 1. 오전 11:06:38
     let currentTimeStr = now.toLocaleDateString();
+
+    /*
+    setmemoList([
+    ...memoList, // 1. 기존 리스트의 모든 요소
+      newMemo,     // 2. 새 메모 객체
+    ]);
+     */
   }
 
   return (
