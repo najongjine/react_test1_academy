@@ -8,6 +8,11 @@ interface Memotype {
 export default function Memo() {
   const [memo, setmemo] = useState<string>("");
   const [memoList, setmemoList] = useState<Memotype[]>([]);
+
+  async function onSave(event: React.MouseEvent) {
+    event.preventDefault();
+  }
+
   return (
     <div className="content-margin-padding">
       <div>memo 화면</div>
@@ -33,9 +38,7 @@ export default function Memo() {
             <button
               className="middle none center mr-4 rounded-lg bg-green-500 py-3 px-6 font-sans text-xs font-bold uppercase text-white shadow-md shadow-green-500/20 transition-all hover:shadow-lg hover:shadow-green-500/40 focus:opacity-[0.85] focus:shadow-none active:opacity-[0.85] active:shadow-none disabled:pointer-events-none disabled:opacity-50 disabled:shadow-none ml-auto"
               data-ripple-light="true"
-              onClick={(event) => {
-                event.preventDefault();
-              }}
+              onClick={onSave}
             >
               저장
             </button>
