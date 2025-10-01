@@ -11,6 +11,7 @@ export default function Memo() {
 
   async function onSave(event: React.MouseEvent) {
     event.preventDefault();
+    if (!memo) return;
     /* 저장 버튼 누르면, memo 칸에 입력했던거 memolist에 추가하기 */
     let newMemo: Memotype = { content: "", date: "" };
     let now = new Date();
