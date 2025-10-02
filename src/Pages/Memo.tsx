@@ -74,11 +74,6 @@ export default function Memo() {
           </div>
         ))}
       </div>
-
-      <div className=".flex-container">
-        <div className=" .left">left</div> &nbsp;&nbsp;
-        <div className=".right">right</div>
-      </div>
     </div>
   );
 }
