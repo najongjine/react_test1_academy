@@ -26,6 +26,7 @@ export default function Memo() {
       ...memoList, // 1. 기존 리스트의 모든 요소
       newMemo, // 2. 새 메모 객체
     ]);
+    setmemo("");
   }
 
   return (
