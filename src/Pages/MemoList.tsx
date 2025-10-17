@@ -1,10 +1,22 @@
 import { useEffect, useState } from "react";
+import "./MemoList.css";
+
+interface Memotype {
+  content: string;
+  createdDt: string;
+  updatedDt: string;
+  id: number;
+  title: string;
+}
 
 export default function MemoList() {
   const API_BASE_URL = import.meta.env.VITE_API_BASE_URL;
+  const [memo, setMemo] = useState<Memotype[]>([]);
+
   useEffect(() => {
     getMemoList();
   }, []);
+
   async function getMemoList() {
     const fetchOption = {
       method: "GET",
@@ -17,6 +29,7 @@ export default function MemoList() {
       fetchOption
     );
     res = await res.json();
+    setMemo(res?.data ?? []);
     console.log(`## res: `, res);
   }
 

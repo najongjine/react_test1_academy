@@ -1,0 +1,40 @@
+.pre-wrap-text {
+  white-space: pre-wrap;
+}
+
+/* 1. 메모 항목 컨테이너 (하나의 행이 될 부분) */
+.memo-item-container {
+  display: flex; /* Flex 컨테이너로 설정 */
+  align-items: center; /* 항목들을 세로 중앙에 정렬 (줄 높이가 달라져도 보기 좋게) */
+  justify-content: space-between; /* 내용과 정보/버튼 그룹을 양 끝으로 배치 */
+  padding: 1rem; /* 항목 내부 패딩 */
+  border-bottom: 1px solid #eee; /* 각 항목을 구분하는 선 */
+}
+
+/* 2. 메모 내용 */
+.memo-content {
+  flex-grow: 1; /* 남은 공간을 채우도록 허용 */
+  white-space: pre-wrap; /* 기존 pre-wrap 유지 */
+  margin-right: 1rem; /* 오른쪽 요소들과의 간격 */
+}
+
+/* 3. 날짜 및 버튼 그룹 컨테이너 */
+.memo-info-actions {
+  display: flex; /* 날짜와 버튼을 한 줄에 배치 */
+  align-items: center; /* 세로 중앙 정렬 */
+  flex-shrink: 0; /* 공간이 부족해도 이 요소가 줄어들지 않도록 고정 */
+  gap: 1rem; /* 날짜와 버튼 사이의 간격 */
+}
+
+/* 4. 날짜 */
+.memo-date {
+  /* 날짜에 필요한 스타일 (예: 색상, 폰트 크기) */
+  color: #888;
+}
+
+/* 5. 버튼 스타일 */
+.memo-button {
+  /* 버튼에 필요한 스타일 */
+  padding: 0.5rem 1rem;
+  /* ... */
+}
