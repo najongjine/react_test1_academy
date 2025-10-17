@@ -7,6 +7,7 @@ import Footer from "./Components/Footer";
 import Home from "./Pages/Home";
 import Lotto from "./Pages/Lotto";
 import Memo from "./Pages/Memo";
+import MemoList from "./Pages/MemoList";
 
 function App() {
   return (
@@ -17,7 +18,7 @@ function App() {
           <Route path="/" element={<Home />} />
           <Route path="/calc" element={<Calc />} />
           <Route path="/lotto" element={<Lotto />} />
-          <Route path="/memo" element={<Memo />} />
+          <Route path="/memo" element={<MemoList />} />
         </Routes>
         <Footer />
       </BrowserRouter>

@@ -3,7 +3,7 @@ import { useEffect, useState } from "react";
 export default function MemoList() {
   const API_BASE_URL = import.meta.env.VITE_API_BASE_URL;
   useEffect(() => {
-    //
+    getMemoList();
   }, []);
   async function getMemoList() {
     const fetchOption = {
@@ -17,6 +17,7 @@ export default function MemoList() {
       `${API_BASE_URL}/api/board/get_memo_list`,
       fetchOption
     );
+    console.log(`## res: `, res);
   }
 
   return (
