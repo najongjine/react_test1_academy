@@ -3,7 +3,7 @@ import { useEffect, useState } from "react";
 export default function MemoList() {
   useEffect(() => {
     //
-  });
+  }, []);
   async function getMemoList() {
     //
   }
