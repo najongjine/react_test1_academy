@@ -11,12 +11,12 @@ export default function MemoList() {
       headers: {
         Authorization: "",
       },
-      body: JSON.stringify(""),
     };
-    let res = await fetch(
+    let res: any = await fetch(
       `${API_BASE_URL}/api/board/get_memo_list`,
       fetchOption
     );
+    res = await res.json();
     console.log(`## res: `, res);
   }
 
