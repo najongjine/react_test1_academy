@@ -24,11 +24,16 @@ export default function MemoUpsert() {
 
   async function onSave(event: React.MouseEvent) {
     event.preventDefault();
+    // 제목 내용 둘다 입력해야 서버에 저장되게 하기
     const formData = new FormData();
     formData.append("title", memo?.title ?? "");
     formData.append("content", memo?.content ?? "");
     formData.append("id", String(memo?.id ?? 0));
     try {
+      if (!memo.title || !memo.content) {
+        alert(`제목과 내용을 입력해 주세요`);
+        return;
+      }
       const response = await fetch(`${API_BASE_URL}/api/board/upsert`, {
         method: "POST",
         body: formData, // FormData 객체를 body에 담습니다.
