@@ -50,6 +50,10 @@ export default function MemoList() {
           </div>
         ))}
       </div>
+
+      <div>
+        <button>new</button>
+      </div>
     </div>
   );
 }
