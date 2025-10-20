@@ -35,6 +35,7 @@ export default function MemoUpsert() {
         },
       });
       const result = await response.json(); // 서버 응답을 JSON으로 파싱
+      alert(JSON.stringify(result));
     } catch (error: any) {
       console.log(`업로드 에러! ${error?.message ?? ""}`);
     }
