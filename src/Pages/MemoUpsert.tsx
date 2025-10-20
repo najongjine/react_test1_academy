@@ -29,15 +29,21 @@ export default function MemoUpsert() {
       <div>
         <form method="post" onSubmit={() => {}}>
           <div>
+            <input
+              value={memo?.title}
+              placeholder="제목을 입력하세요"
+              onChange={(event) => {}}
+              maxLength={300}
+            />
             <textarea
               className="block p-2.5 w-full text-sm text-gray-900 bg-white rounded-lg border-2 border-black focus:ring-black focus:border-black dark:bg-gray-700 dark:border-gray-600 dark:placeholder-white-400 dark:text-white dark:focus:ring-black dark:focus:border-black"
               placeholder="메모를 입력하세요"
               cols={100}
               rows={10}
-              value={memo?.title}
+              value={memo?.content}
               onChange={(event) => {
                 let _memo = memo;
-                _memo.title = event?.target?.value ?? "";
+                _memo.content = event?.target?.value ?? "";
                 setMemo(_memo);
               }}
               onKeyDown={(event) => {}}
