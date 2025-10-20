@@ -20,7 +20,13 @@ export default function MemoUpsert() {
 
   useEffect(() => {}, []);
 
-  async function onSave() {}
+  async function onSave(event: React.MouseEvent) {
+    event.preventDefault();
+    const formData = new FormData();
+    formData.append("title", memo?.title ?? "");
+    formData.append("content", memo?.content ?? "");
+    formData.append("id", String(memo?.id ?? 0));
+  }
 
   return (
     <div className="content-margin-padding">
