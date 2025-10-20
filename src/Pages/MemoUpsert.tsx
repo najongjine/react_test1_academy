@@ -30,6 +30,9 @@ export default function MemoUpsert() {
       const response = await fetch(`${API_BASE_URL}/api/board/upsert`, {
         method: "POST",
         body: formData, // FormData 객체를 body에 담습니다.
+        headers: {
+          Authorization: "",
+        },
       });
       const result = await response.json(); // 서버 응답을 JSON으로 파싱
     } catch (error: any) {
