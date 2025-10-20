@@ -1,4 +1,5 @@
 import { useEffect, useState } from "react";
+import { useNavigate } from "react-router-dom";
 
 interface Memotype {
   content: string;
@@ -9,6 +10,7 @@ interface Memotype {
 }
 
 export default function MemoUpsert() {
+  const navigate = useNavigate();
   const API_BASE_URL = import.meta.env.VITE_API_BASE_URL;
   const [memo, setMemo] = useState<Memotype>({
     content: "",
@@ -35,7 +37,11 @@ export default function MemoUpsert() {
         },
       });
       const result = await response.json(); // 서버 응답을 JSON으로 파싱
-      alert(JSON.stringify(result));
+      if (!result?.success) {
+        alert(`작성 실패. ${result?.msg}`);
+        return;
+      }
+      navigate("/memo");
     } catch (error: any) {
       console.log(`업로드 에러! ${error?.message ?? ""}`);
     }
