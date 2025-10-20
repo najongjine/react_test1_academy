@@ -26,6 +26,15 @@ export default function MemoUpsert() {
     formData.append("title", memo?.title ?? "");
     formData.append("content", memo?.content ?? "");
     formData.append("id", String(memo?.id ?? 0));
+    try {
+      const response = await fetch(`${API_BASE_URL}/api/board/upsert`, {
+        method: "POST",
+        body: formData, // FormData 객체를 body에 담습니다.
+      });
+      const result = await response.json(); // 서버 응답을 JSON으로 파싱
+    } catch (error: any) {
+      console.log(`업로드 에러! ${error?.message ?? ""}`);
+    }
   }
 
   return (
