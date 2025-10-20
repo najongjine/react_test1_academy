@@ -33,9 +33,10 @@ export default function MemoUpsert() {
               value={memo?.title}
               placeholder="제목을 입력하세요"
               onChange={(event) => {
-                let _memo = memo;
-                _memo.title = event?.target?.value ?? "";
-                setMemo(_memo);
+                setMemo({
+                  ...memo,
+                  title: event?.target?.value ?? "",
+                });
               }}
               maxLength={300}
             />
@@ -46,9 +47,10 @@ export default function MemoUpsert() {
               rows={10}
               value={memo?.content}
               onChange={(event) => {
-                let _memo = memo;
-                _memo.content = event?.target?.value ?? "";
-                setMemo(_memo);
+                setMemo({
+                  ...memo,
+                  content: event?.target?.value ?? "",
+                });
               }}
               onKeyDown={(event) => {}}
               maxLength={1000}
