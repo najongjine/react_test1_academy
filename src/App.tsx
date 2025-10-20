@@ -8,6 +8,7 @@ import Home from "./Pages/Home";
 import Lotto from "./Pages/Lotto";
 import Memo from "./Pages/Memo";
 import MemoList from "./Pages/MemoList";
+import MemoUpsert from "./Pages/MemoUpsert";
 
 function App() {
   return (
@@ -19,6 +20,7 @@ function App() {
           <Route path="/calc" element={<Calc />} />
           <Route path="/lotto" element={<Lotto />} />
           <Route path="/memo" element={<MemoList />} />
+          <Route path="/memo_upsert" element={<MemoUpsert />} />
         </Routes>
         <Footer />
       </BrowserRouter>
