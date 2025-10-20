@@ -32,7 +32,11 @@ export default function MemoUpsert() {
             <input
               value={memo?.title}
               placeholder="제목을 입력하세요"
-              onChange={(event) => {}}
+              onChange={(event) => {
+                let _memo = memo;
+                _memo.title = event?.target?.value ?? "";
+                setMemo(_memo);
+              }}
               maxLength={300}
             />
             <textarea
