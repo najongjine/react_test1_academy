@@ -1,5 +1,5 @@
 import { useEffect, useState } from "react";
-import { useNavigate } from "react-router-dom";
+import { useNavigate, useSearchParams } from "react-router-dom";
 
 interface Memotype {
   content: string;
@@ -10,6 +10,8 @@ interface Memotype {
 }
 
 export default function MemoUpsert() {
+  const [searchParams] = useSearchParams();
+  const memoId = Number(searchParams?.get("id") ?? 0);
   const navigate = useNavigate();
   const API_BASE_URL = import.meta.env.VITE_API_BASE_URL;
   const [memo, setMemo] = useState<Memotype>({
