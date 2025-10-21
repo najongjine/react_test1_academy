@@ -22,7 +22,25 @@ export default function MemoUpsert() {
     title: "",
   });
 
-  useEffect(() => {}, []);
+  useEffect(() => {
+    getMemo();
+  }, []);
+
+  async function getMemo() {
+    const fetchOption = {
+      method: "GET",
+      headers: {
+        Authorization: "",
+      },
+    };
+    let res: any = await fetch(
+      `${API_BASE_URL}/api/board/get_memo?id=${memoId}`,
+      fetchOption
+    );
+    res = await res.json();
+    setMemo(res?.data ?? []);
+    console.log(`## res: `, res);
+  }
 
   async function onSave(event: React.MouseEvent) {
     event.preventDefault();
