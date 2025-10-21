@@ -27,19 +27,26 @@ export default function MemoUpsert() {
   }, []);
 
   async function getMemo() {
-    const fetchOption = {
-      method: "GET",
-      headers: {
-        Authorization: "",
-      },
-    };
-    let res: any = await fetch(
-      `${API_BASE_URL}/api/board/get_memo?id=${memoId}`,
-      fetchOption
-    );
-    res = await res.json();
-    setMemo(res?.data ?? []);
-    console.log(`## res: `, res);
+    try {
+      const fetchOption = {
+        method: "GET",
+        headers: {
+          Authorization: "",
+        },
+      };
+      let result: any = await fetch(
+        `${API_BASE_URL}/api/board/get_memo?id=${memoId}`,
+        fetchOption
+      );
+      result = await result.json();
+      if (!result?.success) {
+        alert(`메모 데이터 가져오기 실패. ${result?.msg}`);
+        return;
+      }
+      setMemo(result?.data ?? {});
+    } catch (error: any) {
+      console.log(`서버 에러! ${error?.message ?? ""}`);
+    }
   }
 
   async function onSave(event: React.MouseEvent) {
