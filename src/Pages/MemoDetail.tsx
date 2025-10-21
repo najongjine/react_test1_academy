@@ -61,8 +61,16 @@ export default function MemoDetail() {
     <div className="content-margin-padding">
       <div>상세내용</div>
 
-      <div></div>
-      <button> 리스트로 이동</button>
+      <div>제목: {memo?.title}</div>
+      <div>내용: {memo?.content}</div>
+      <button
+        onClick={() => {
+          navigate(`/memo}`);
+        }}
+      >
+        {" "}
+        리스트로 이동
+      </button>
     </div>
   );
 }
