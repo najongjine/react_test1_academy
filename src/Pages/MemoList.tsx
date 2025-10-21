@@ -52,7 +52,7 @@ export default function MemoList() {
             <div
               className="memo-content"
               onClick={() => {
-                onMemoDetail(0);
+                onMemoDetail(e?.id);
               }}
             >
               {e.title}
