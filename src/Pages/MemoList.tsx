@@ -1,4 +1,5 @@
 import { useEffect, useState } from "react";
+import { useNavigate } from "react-router-dom";
 import "./MemoList.css";
 
 interface Memotype {
@@ -10,12 +11,17 @@ interface Memotype {
 }
 
 export default function MemoList() {
+  const navigate = useNavigate();
   const API_BASE_URL = import.meta.env.VITE_API_BASE_URL;
   const [memo, setMemo] = useState<Memotype[]>([]);
 
   useEffect(() => {
     getMemoList();
   }, []);
+
+  function onMemoUpsert(id = 0) {
+    navigate(`/memo_upsert?id=${id}`);
+  }
 
   async function getMemoList() {
     const fetchOption = {
@@ -52,7 +58,13 @@ export default function MemoList() {
       </div>
 
       <div>
-        <button>new</button>
+        <button
+          onClick={() => {
+            onMemoUpsert(0);
+          }}
+        >
+          new
+        </button>
       </div>
     </div>
   );
