@@ -6,9 +6,9 @@ import Header from "./Components/Header";
 import Footer from "./Components/Footer";
 import Home from "./Pages/Home";
 import Lotto from "./Pages/Lotto";
-import Memo from "./Pages/Memo";
 import MemoList from "./Pages/MemoList";
 import MemoUpsert from "./Pages/MemoUpsert";
+import MemoDetail from "./Pages/MemoDetail";
 
 function App() {
   return (
@@ -21,6 +21,7 @@ function App() {
           <Route path="/lotto" element={<Lotto />} />
           <Route path="/memo" element={<MemoList />} />
           <Route path="/memo_upsert" element={<MemoUpsert />} />
+          <Route path="/memo_detail" element={<MemoDetail />} />
         </Routes>
         <Footer />
       </BrowserRouter>

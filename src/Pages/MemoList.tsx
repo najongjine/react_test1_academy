@@ -22,6 +22,9 @@ export default function MemoList() {
   function onMemoUpsert(id = 0) {
     navigate(`/memo_upsert?id=${id}`);
   }
+  function onMemoDetail(id = 0) {
+    navigate(`/memo_detail?id=${id}`);
+  }
 
   async function getMemoList() {
     const fetchOption = {
@@ -46,7 +49,14 @@ export default function MemoList() {
       <div>
         {memo.map((e) => (
           <div className="memo-item-container" key={e?.id}>
-            <div className="memo-content">{e.title}</div>
+            <div
+              className="memo-content"
+              onClick={() => {
+                onMemoDetail(0);
+              }}
+            >
+              {e.title}
+            </div>
             <div className="memo-info-actions">
               <div className="memo-date">{e.createdDt}</div>
               {/* 나중에 추가할 버튼 위치 */}
