@@ -45,7 +45,7 @@ export default function MemoList() {
 
       <div>
         {memo.map((e) => (
-          <div className="memo-item-container">
+          <div className="memo-item-container" key={e?.id}>
             <div className="memo-content">{e.title}</div>
             <div className="memo-info-actions">
               <div className="memo-date">{e.createdDt}</div>
