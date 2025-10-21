@@ -43,7 +43,15 @@ export default function MemoUpsert() {
         alert(`메모 데이터 가져오기 실패. ${result?.msg}`);
         return;
       }
-      setMemo(result?.data ?? {});
+      setMemo(
+        result?.data ?? {
+          content: "",
+          createdDt: "",
+          updatedDt: "",
+          id: 0,
+          title: "",
+        }
+      );
     } catch (error: any) {
       console.log(`서버 에러! ${error?.message ?? ""}`);
     }
